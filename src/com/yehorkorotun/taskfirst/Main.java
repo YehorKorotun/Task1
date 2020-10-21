@@ -13,14 +13,10 @@ public class Main {
         new FillArray().randomArray();
 
         System.out.println("Task 2: ");
-        NumberOfLines numberOfLines = new NumberOfLines();
-        numberOfLines.enterNumbersAndValuesOfLines();
-        numberOfLines.averageLength();
+        new NumberOfLines().enterNumbersAndValuesOfLines();
 
         System.out.println("Task 3: ");
-        MathOperations mathOperations = new MathOperations();
-        mathOperations.enterNumbers();
-        mathOperations.calculation();
+        new MathOperations().enterNumbersAndCalculation();
 
     }
 }

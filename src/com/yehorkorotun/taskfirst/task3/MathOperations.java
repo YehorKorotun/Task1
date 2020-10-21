@@ -12,31 +12,26 @@ public class MathOperations {
 
     private Scanner scanner = new Scanner(System.in);
 
-    public void MathOperations (char operation, int resultOfCalculation, Scanner scanner) {
-        this.operation = operation;
-        this.resultOfCalculation = resultOfCalculation;
-        this.scanner = scanner;
+    public void MathOperations () {
+        this.scanner = new Scanner(System.in);
     }
 
-    public void enterNumbers (){
+    public void enterNumbersAndCalculation () {
         try {
             System.out.println("Enter first number: ");
             firstNumber = scanner.nextInt();
             System.out.println("Enter second number: ");
             secondNumber = scanner.nextInt();
-        } catch (InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.println("Error, incorrect format! Try again!");
         }
         try {
             System.out.println("Enter the operation: ");
             operation = scanner.next().charAt(0);
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("CHAR");
         }
-    }
-
-    public void calculation(){
-        switch(operation){
+        switch (operation) {
             case '+':
                 resultOfCalculation = firstNumber + secondNumber;
                 break;
@@ -51,8 +46,9 @@ public class MathOperations {
                 break;
             default:
                 System.out.println("Error, try one more time!");
-                enterNumbers();
+                enterNumbersAndCalculation();
         }
         System.out.print("Your result is: " + resultOfCalculation);
     }
 }
+

@@ -11,10 +11,8 @@ public class NumberOfLines {
 
     private Scanner scanner = new Scanner(System.in);
 
-    public void NumberOfLines (int [] numbersArray, int sumOfValues, Scanner scanner){
-         this.numbersArray = numbersArray;
-         this.sumOfValues = sumOfValues;
-         this.scanner = scanner;
+    public void NumberOfLines (){
+         this.scanner = new Scanner(System.in);
     }
 
     public void enterNumbersAndValuesOfLines() {
@@ -27,16 +25,12 @@ public class NumberOfLines {
                 valuesOfLines = scanner.nextInt();
                 numbersArray[i] = valuesOfLines;
             }
-        } catch (InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.println("Error! Try one more time!");
         } catch (NullPointerException e) {
             System.out.println("Error! The string cannot be empty!");
         }
-
-    }
-
-    public void averageLength(){
-        for (int i = 0; i < numbersArray.length; i++){
+        for (int i = 0; i < numbersArray.length; i++) {
             sumOfValues += numbersArray[i];
         }
         System.out.println("Average length of lines is: " + sumOfValues / numberOfLines);
