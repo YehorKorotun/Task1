@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         System.out.println("Task 1: ");
-        //new FillArray().randomArray();
+        new FillArray().randomArray();
 
         System.out.println("Task 2: ");
         NumberOfLines numberOfLines = new NumberOfLines();
@@ -19,8 +19,8 @@ public class Main {
 
         System.out.println("Task 3: ");
         MathOperations mathOperations = new MathOperations();
-//        mathOperations.enterNumbers();
-//        mathOperations.calculation();
+        mathOperations.enterNumbers();
+        mathOperations.calculation();
 
     }
 }
