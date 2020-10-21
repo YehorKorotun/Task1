@@ -1,5 +1,7 @@
 package com.yehorkorotun.taskfirst.task3;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MathOperations {
@@ -10,13 +12,27 @@ public class MathOperations {
 
     private Scanner scanner = new Scanner(System.in);
 
-    public void enterNumbers(){
-        System.out.println("Enter first number: ");
-        firstNumber = scanner.nextInt();
-        System.out.println("Enter second number: ");
-        secondNumber = scanner.nextInt();
-        System.out.println("Enter the operation: ");
-        operation = scanner.next().charAt(0);
+    public void MathOperations (char operation, int resultOfCalculation, Scanner scanner) {
+        this.operation = operation;
+        this.resultOfCalculation = resultOfCalculation;
+        this.scanner = scanner;
+    }
+
+    public void enterNumbers (){
+        try {
+            System.out.println("Enter first number: ");
+            firstNumber = scanner.nextInt();
+            System.out.println("Enter second number: ");
+            secondNumber = scanner.nextInt();
+        } catch (InputMismatchException e){
+            System.out.println("Error, incorrect format! Try again!");
+        }
+        try {
+            System.out.println("Enter the operation: ");
+            operation = scanner.next().charAt(0);
+        } catch (Exception e){
+            System.out.println("CHAR");
+        }
     }
 
     public void calculation(){

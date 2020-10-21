@@ -1,5 +1,6 @@
 package com.yehorkorotun.taskfirst.task2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class NumberOfLines {
@@ -10,16 +11,28 @@ public class NumberOfLines {
 
     private Scanner scanner = new Scanner(System.in);
 
-    public void enterNumbersAndValuesOfLines() {
-        System.out.println("Enter the number of lines: ");
-        numberOfLines = scanner.nextInt();
-        numbersArray = new int[numberOfLines];
+    public void NumberOfLines (int [] numbersArray, int sumOfValues, Scanner scanner){
+         this.numbersArray = numbersArray;
+         this.sumOfValues = sumOfValues;
+         this.scanner = scanner;
+    }
 
-        System.out.println("Enter the values of lines: ");
-        for (int i = 0; i < numberOfLines; i++) {
-            valuesOfLines = scanner.nextInt();
-            numbersArray[i] = valuesOfLines;
+    public void enterNumbersAndValuesOfLines() {
+        try {
+            System.out.println("Enter the number of lines: ");
+            numberOfLines = scanner.nextInt();
+            numbersArray = new int[numberOfLines];
+            System.out.println("Enter the values of lines: ");
+            for (int i = 0; i < numberOfLines; i++) {
+                valuesOfLines = scanner.nextInt();
+                numbersArray[i] = valuesOfLines;
+            }
+        } catch (InputMismatchException e){
+            System.out.println("Error! Try one more time!");
+        } catch (NullPointerException e) {
+            System.out.println("Error! The string cannot be empty!");
         }
+
     }
 
     public void averageLength(){
