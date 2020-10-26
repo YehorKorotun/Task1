@@ -8,14 +8,13 @@ public class NumberOfLines {
     private int valuesOfLines;
     private int [] numbersArray;
     private int sumOfValues;
-
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
     public void NumberOfLines (){
          this.scanner = new Scanner(System.in);
     }
 
-    public void enterNumbersAndValuesOfLines() {
+    public void enterDataAndPerformCalculations() {
         try {
             System.out.println("Enter the number of lines: ");
             numberOfLines = scanner.nextInt();

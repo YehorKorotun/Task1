@@ -4,6 +4,8 @@ import com.yehorkorotun.taskfirst.task1.FillArray;
 import com.yehorkorotun.taskfirst.task2.NumberOfLines;
 import com.yehorkorotun.taskfirst.task3.MathOperations;
 
+import java.sql.SQLOutput;
+
 
 public class Main {
 
@@ -13,10 +15,11 @@ public class Main {
         new FillArray().randomArray();
 
         System.out.println("Task 2: ");
-        new NumberOfLines().enterNumbersAndValuesOfLines();
+        new NumberOfLines().enterDataAndPerformCalculations();
 
         System.out.println("Task 3: ");
-        new MathOperations().enterNumbersAndCalculation();
+        new MathOperations().enterNumbersAndCalculate();
+
 
     }
 }

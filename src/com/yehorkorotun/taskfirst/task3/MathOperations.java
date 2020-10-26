@@ -9,14 +9,13 @@ public class MathOperations {
     private int secondNumber;
     private char operation;
     private int resultOfCalculation;
-
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
     public void MathOperations () {
         this.scanner = new Scanner(System.in);
     }
 
-    public void enterNumbersAndCalculation () {
+    public void enterNumbersAndCalculate () {
         try {
             System.out.println("Enter first number: ");
             firstNumber = scanner.nextInt();
@@ -46,7 +45,7 @@ public class MathOperations {
                 break;
             default:
                 System.out.println("Error, try one more time!");
-                enterNumbersAndCalculation();
+                enterNumbersAndCalculate();
         }
         System.out.print("Your result is: " + resultOfCalculation);
     }
